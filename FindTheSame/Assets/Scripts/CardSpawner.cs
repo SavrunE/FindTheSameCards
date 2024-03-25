@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CardSpawner : MonoBehaviour
@@ -11,12 +12,20 @@ public class CardSpawner : MonoBehaviour
 	{
 		for (int i = 0; i < _count; i++)
 		{
-			Card card1 = Instantiate(_cardTemplate, this.transform);
-			Card card2 = Instantiate(_cardTemplate, this.transform);
-			int rnd = _spriteHolder.GetRndSpriteID();
-			_spriteHolder.GetSprite(rnd);
+			Card cardL = Instantiate(_cardTemplate, this.transform);
+			Card cardR = Instantiate(_cardTemplate, this.transform);
 
-			Vector3 pos = _spawnPositions.TakeRndSpawnLeftPos(card1.backXY);
+			int id = _spriteHolder.GetRndSpriteID();
+			Sprite sprite = _spriteHolder.GetSprite(id);
+
+			cardL.Init(id, sprite);
+			cardR.Init(id, sprite);
+
+			Vector3 posL = _spawnPositions.TakeLeftPos(cardL.backXY());
+			Vector3 posR = _spawnPositions.TakeRightPos(cardR.backXY());
+
+			cardL.transform.position = posL;
+			cardR.transform.position = posR;
 		}
 	}
 }

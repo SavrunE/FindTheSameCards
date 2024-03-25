@@ -217,8 +217,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2068918339}
   - {fileID: 2092770148}
+  - {fileID: 2068918339}
   - {fileID: 919549321}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -370,6 +370,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6918eaf4beaaaa4dbcd878056fd0647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _backLeft: {fileID: 2092770148}
+  _backRight: {fileID: 2068918339}
 --- !u!114 &919549324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,6 +387,7 @@ MonoBehaviour:
   _cardTemplate: {fileID: 7730692727317669066, guid: 4d465831a6439a54ca73984825b86e20, type: 3}
   _count: 4
   _spriteHolder: {fileID: 919549322}
+  _spawnPositions: {fileID: 919549323}
 --- !u!1 &1071327064
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,7 +654,7 @@ GameObject:
   - component: {fileID: 2068918341}
   - component: {fileID: 2068918340}
   m_Layer: 5
-  m_Name: back (1)
+  m_Name: backR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -726,7 +729,7 @@ GameObject:
   - component: {fileID: 2092770150}
   - component: {fileID: 2092770149}
   m_Layer: 5
-  m_Name: back (2)
+  m_Name: backL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

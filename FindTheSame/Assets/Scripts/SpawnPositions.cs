@@ -1,24 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnPositions : MonoBehaviour
 {
 	[SerializeField] private RectTransform _backLeft;
-	[SerializeField] private Transform _backRight;
+	[SerializeField] private RectTransform _backRight;
 
-	public Vector3 TakeRndSpawnLeftPos(Vector2 templateSize)
+	public Vector3 TakeLeftPos(Vector2 templateSize)
 	{
-		float width = _backLeft.sizeDelta.x;
-		float height = _backLeft.sizeDelta.y;
+		return TakeRndPos(templateSize, _backLeft);
+	}
+
+	public Vector3 TakeRightPos(Vector2 templateSize)
+	{
+		return TakeRndPos(templateSize, _backRight);
+	}
+
+	public Vector3 TakeRndPos(Vector2 templateSize, RectTransform rect)
+	{
+		float width = rect.sizeDelta.x;
+		float height = rect.sizeDelta.y;
 
 		float rndWidth = Random.Range(-width, width);
 		float rndHeight = Random.Range(-height, height);
 
-		float x = _backLeft.position.x + rndHeight - templateSize.x;
-		float y = _backLeft.position.y + rndHeight - templateSize.y;
+		float x = rect.position.x + rndWidth - templateSize.x;
+		float y = rect.position.y + rndHeight - templateSize.y;
 
-		return
-
+		return new Vector3(x, y, 0f);
 	}
 }

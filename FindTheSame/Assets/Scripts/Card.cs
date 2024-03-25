@@ -9,7 +9,7 @@ public class Card : MonoBehaviour
 
 	public Vector2 backXY() => _backRect.sizeDelta;
 
-	private void Init(int id, Sprite sprite)
+	public void Init(int id, Sprite sprite)
 	{
 		SetId(id);
 		SetSprite(sprite);
