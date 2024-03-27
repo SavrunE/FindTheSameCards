@@ -24,8 +24,8 @@ public class CardSpawner : MonoBehaviour
 			Vector3 posL = _spawnPositions.TakeLeftPos(cardL.backXY());
 			Vector3 posR = _spawnPositions.TakeRightPos(cardR.backXY());
 
-			cardL.transform.position = posL;
-			cardR.transform.position = posR;
+			cardL.GetComponent<RectTransform>().localPosition = posL;
+			cardR.GetComponent<RectTransform>().localPosition = posR;
 		}
 	}
 }

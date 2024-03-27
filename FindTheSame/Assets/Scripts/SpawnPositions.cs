@@ -17,14 +17,20 @@ public class SpawnPositions : MonoBehaviour
 
 	public Vector3 TakeRndPos(Vector2 templateSize, RectTransform rect)
 	{
-		float width = rect.sizeDelta.x;
-		float height = rect.sizeDelta.y;
+		float posX = rect.localPosition.x;
+		float posY = rect.localPosition.y;
 
-		float rndWidth = Random.Range(-width, width);
-		float rndHeight = Random.Range(-height, height);
+		float width = rect.sizeDelta.x - templateSize.x;
+		float height = rect.sizeDelta.y - templateSize.y;
 
-		float x = rect.position.x + rndWidth - templateSize.x;
-		float y = rect.position.y + rndHeight - templateSize.y;
+		float rndWidth = Random.Range(-width, width) / 2f;
+		float rndHeight = Random.Range(-height, height) / 2f;
+
+		//float x = posX + rndWidth - templateSize.x;
+		//float y = posY + rndHeight - templateSize.y;
+
+		float x = posX + rndWidth;
+		float y = posY + rndHeight;
 
 		return new Vector3(x, y, 0f);
 	}

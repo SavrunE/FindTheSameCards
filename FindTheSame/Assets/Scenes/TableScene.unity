@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardTemplate: {fileID: 7730692727317669066, guid: 4d465831a6439a54ca73984825b86e20, type: 3}
-  _count: 4
+  _count: 50
   _spriteHolder: {fileID: 919549322}
   _spawnPositions: {fileID: 919549323}
 --- !u!1 &1071327064
