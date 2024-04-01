@@ -26,9 +26,6 @@ public class SpawnPositions : MonoBehaviour
 		float rndWidth = Random.Range(-width, width) / 2f;
 		float rndHeight = Random.Range(-height, height) / 2f;
 
-		//float x = posX + rndWidth - templateSize.x;
-		//float y = posY + rndHeight - templateSize.y;
-
 		float x = posX + rndWidth;
 		float y = posY + rndHeight;
 

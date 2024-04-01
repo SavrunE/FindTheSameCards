@@ -55,6 +55,7 @@ MonoBehaviour:
   _image: {fileID: 3369114239685907808}
   _backRect: {fileID: 110785896918721184}
   _button: {fileID: 1128294797806933820}
+  _clickedColor: {r: 0.518334, g: 0.9811321, b: 0.518334, a: 1}
 --- !u!1 &2463589203671159164
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,6 +148,7 @@ MonoBehaviour:
   _image: {fileID: 1545595868625215555}
   _backRect: {fileID: 0}
   _button: {fileID: 0}
+  _clickedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5484064357196133649
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,7 +334,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 1ab78d44b9762a145ae1dfaf878988f8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
