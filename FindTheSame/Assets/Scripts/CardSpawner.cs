@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -7,6 +8,11 @@ public class CardSpawner : MonoBehaviour
 	[SerializeField] private int _count;
 	[SerializeField] private SpriteHolder _spriteHolder;
 	[SerializeField] private SpawnPositions _spawnPositions;
+
+	internal void TakeCard()
+	{
+		throw new NotImplementedException();
+	}
 
 	private void Start()
 	{
