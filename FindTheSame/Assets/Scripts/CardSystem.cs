@@ -13,11 +13,12 @@ public class CardSystem : Singleton<CardSystem>
 				card.Delete();
 				_lastCard.Delete();
 				_lastCard = null;
-				Blocks.instance.Reset();
+				Blocks.instance.Reset(1f);
 				Debug.Log("Take Points");
 			}
 			else
 			{
+				Blocks.instance.Reset(1f);
 				_lastCard.UnClicked();
 				card.UnClicked();
 				_lastCard = null;
