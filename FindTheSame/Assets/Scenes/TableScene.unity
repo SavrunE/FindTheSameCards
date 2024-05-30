@@ -446,6 +446,7 @@ GameObject:
   - component: {fileID: 919549322}
   - component: {fileID: 919549326}
   - component: {fileID: 919549327}
+  - component: {fileID: 919549328}
   m_Layer: 5
   m_Name: GameLogic
   m_TagString: Untagged
@@ -592,6 +593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardTemplate: {fileID: 7730692727317669066, guid: 4d465831a6439a54ca73984825b86e20, type: 3}
+  _cardSystem: {fileID: 0}
   _count: 5
   _spriteHolder: {fileID: 919549322}
   _spawnPositions: {fileID: 919549323}
@@ -607,7 +609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc8fb29126825574293b5c43f55a1c92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 60
+  time: 5
   timerUI: {fileID: 826316691}
 --- !u!114 &919549327
 MonoBehaviour:
@@ -623,6 +625,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pintsAccrual: 10
   _pointsUI: {fileID: 2036124835}
+--- !u!114 &919549328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919549320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743434de83c1ecf45be86f4c2c2b57aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dontDestroyOnLoad: 0
+  _timer: {fileID: 919549326}
 --- !u!1 &1071327064
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,14 +8,10 @@ public class CardSpawner : MonoBehaviour
 	[SerializeField] private SpriteHolder _spriteHolder;
 	[SerializeField] private SpawnPositions _spawnPositions;
 
-	internal void TakeCard()
-	{
-		throw new NotImplementedException();
-	}
-
 	private void Start()
 	{
 		Spawn();
+		CardSystem.instance.SetCardCount(_count);
 	}
 
 	private void Spawn()
