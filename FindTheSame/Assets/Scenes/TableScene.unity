@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7372549, g: 0.55717325, b: 0.4862745, a: 1}
+  m_Color: {r: 0.759434, g: 0.67446786, b: 0.6412202, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.48593804, g: 0.735849, b: 0.53577214, a: 1}
+  m_Color: {r: 0.6148095, g: 0.740566, b: 0.6403538, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -901,7 +901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.48593804, g: 0.735849, b: 0.53577214, a: 1}
+  m_Color: {r: 0.6148095, g: 0.740566, b: 0.6403538, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1121,6 +1121,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1648474302}
+  - component: {fileID: 1648474303}
   m_Layer: 5
   m_Name: WinLoseEffect
   m_TagString: Untagged
@@ -1137,7 +1138,7 @@ RectTransform:
   m_GameObject: {fileID: 1648474301}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8171179, y: 0.8171179, z: 0.8171179}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 940215419}
@@ -1148,9 +1149,27 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 2}
+  m_SizeDelta: {x: 100, y: 198}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1648474303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648474301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d21a325e8dd4c74a90fbe9349472f98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _endsMemS: {fileID: 604817254}
+  _images:
+  - {fileID: 940215420}
+  - {fileID: 710867113}
+  - {fileID: 106699731}
+  - {fileID: 1854313206}
 --- !u!1 &1854313204
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,7 +1220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7372549, g: 0.55717325, b: 0.4862745, a: 1}
+  m_Color: {r: 0.759434, g: 0.67446786, b: 0.6412202, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
