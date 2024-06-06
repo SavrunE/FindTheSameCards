@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,8 +10,17 @@ public class WinLoseMenu : MonoBehaviour
 
 	private void Start()
 	{
-		PlaceWinSprites();
+		PlaceLoseSprites();
+	}
 
+	public void PlaceLoseSprites()
+	{
+		List<int> numbers = FindNumbers(_images.Count, _endsMemS.TakeLostLenth());
+
+		for (int i = 0; i < numbers.Count; i++)
+		{
+			_images[i].sprite = _endsMemS.TakeLoseSprite(numbers[i]);
+		}
 	}
 
 	public void PlaceWinSprites()
@@ -25,6 +35,10 @@ public class WinLoseMenu : MonoBehaviour
 
 	private List<int> FindNumbers(int returnCount, int generalCount)
 	{
+		if (returnCount >= generalCount)
+		{
+			throw new NotImplementedException();
+		}
 		List<int> numbers = new List<int>();
 		List<int> result = new List<int>();
 
@@ -35,11 +49,30 @@ public class WinLoseMenu : MonoBehaviour
 
 		for (int x = 0; x < returnCount; x++)
 		{
-			int rnd = Random.Range(0, generalCount);
-			numbers.Remove(rnd);
-			result.Add(rnd);
+			int rnd = UnityEngine.Random.Range(0, generalCount);
+
+			if (HaveSameNumbers(rnd, result))
+			{
+				x--;
+			}
+			else
+			{
+				result.Add(rnd);
+			}
 		}
 
 		return result;
+	}
+
+	private bool HaveSameNumbers(int number, List<int> numbers)
+	{
+		foreach (var item in numbers)
+		{
+			if (number == item)
+			{
+				return true;
+			}
+		}
+		return false;
 	}
 }
