@@ -79,7 +79,7 @@ public class CardSystem : Singleton<CardSystem>
 
 	public void Lose()
 	{
-		_winLoseMenu.ShowWinMenu();
+		_winLoseMenu.ShowLoseMenu();
 		_saverData.SaveByLost();
 		StartCoroutine(RestartLevel());
 		Debug.Log("Lose");

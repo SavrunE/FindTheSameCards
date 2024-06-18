@@ -1,7 +1,7 @@
 using UnityEngine;
 using YG;
 
-public class SceneStarter : MonoBehaviour
+public class GameStarter : MonoBehaviour
 {
 	[SerializeField] private CardSpawner _cardSpawner;
 	[SerializeField] private Timer _timer;
