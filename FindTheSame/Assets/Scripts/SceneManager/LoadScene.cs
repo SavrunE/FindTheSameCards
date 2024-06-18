@@ -5,10 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
-    [SerializeField] private int _id = 1;
+    [SerializeField] private int _id = 2;
 
     private void Start()
     {
         SceneManager.LoadScene(_id);
     }
+
+    public void LoadDefaultScene()
+    {
+		SceneManager.LoadScene(_id);
+	}
 }

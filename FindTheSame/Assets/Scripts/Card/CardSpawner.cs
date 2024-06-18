@@ -4,19 +4,18 @@ using UnityEngine;
 public class CardSpawner : MonoBehaviour
 {
 	[SerializeField] private Card _cardTemplate;
-	[SerializeField] private int _count;
 	[SerializeField] private SpriteHolder _spriteHolder;
 	[SerializeField] private SpawnPositions _spawnPositions;
 
-	private void Start()
+	public void StartSpawn(int cardCount)
 	{
-		Spawn();
-		CardSystem.instance.SetCardCount(_count);
+		Spawn(cardCount);
+		CardSystem.instance.SetCardCount(cardCount);
 	}
 
-	private void Spawn()
+	private void Spawn(int cardCount)
 	{
-		for (int i = 0; i < _count; i++)
+		for (int i = 0; i < cardCount; i++)
 		{
 			Card cardL = Instantiate(_cardTemplate, this.transform);
 			Card cardR = Instantiate(_cardTemplate, this.transform);

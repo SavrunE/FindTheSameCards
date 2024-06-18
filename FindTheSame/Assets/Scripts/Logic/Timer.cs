@@ -6,14 +6,19 @@ public class Timer : MonoBehaviour
 {
     private float _currentTime = 0f;
     private bool _isActiveTimer = true;
-    public float time = 60f;
+    private float _time = 60f;
     [SerializeField] private TextMeshProUGUI timerUI;
 
     public Action OnStopTime;
 
+	public void SetTime(float time)
+	{
+		_time = time;
+	}
+
 	public void ActivateTimer(float time)
 	{
-		this.time = time;
+		this._time = time;
 		_isActiveTimer = true;
 	}
 
@@ -21,9 +26,9 @@ public class Timer : MonoBehaviour
     {
         if (_isActiveTimer)
         {
-			if (time > _currentTime)
+			if (_time > _currentTime)
 			{
-				time -= Time.deltaTime;
+				_time -= Time.deltaTime;
 			}
 			else
 			{
@@ -31,7 +36,7 @@ public class Timer : MonoBehaviour
 				_isActiveTimer = false;
 			}
 
-			timerUI.text = ((int)time).ToString();
+			timerUI.text = ((int)_time).ToString();
 		}
 	}
 }

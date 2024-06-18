@@ -1,19 +1,20 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using YG;
 
 public class CardSystem : Singleton<CardSystem>
 {
 	[SerializeField] private Timer _timer;
+	[SerializeField] private WinLoseMenu _winLoseMenu;
+	[SerializeField] private SaverData _saverData;
 	private Card _lastCard = null;
 	private int _cardCount;
 
 	public Action IsTakeRightCards;
 
-	public static bool systemInitialized { get; private set; } = false;
-
 	private void OnEnable()
 	{
-		systemInitialized = true;
 		_timer.OnStopTime += Lose;
 	}
 
@@ -70,11 +71,30 @@ public class CardSystem : Singleton<CardSystem>
 
 	public void Win()
 	{
+		_winLoseMenu.ShowWinMenu();
+		_saverData.SaveByWin();
+		StartCoroutine(RestartLevel());
 		Debug.Log("Win");
 	}
 
 	public void Lose()
 	{
+		_winLoseMenu.ShowWinMenu();
+		_saverData.SaveByLost();
+		StartCoroutine(RestartLevel());
 		Debug.Log("Lose");
+	}
+
+	private IEnumerator RestartLevel()
+	{
+		float wTime = 3f;
+		while (wTime >= 0f)
+		{
+			wTime -= Time.deltaTime;
+			yield return null;	
+		}
+
+		LoadScene ls = new LoadScene();
+		ls.LoadDefaultScene();
 	}
 }

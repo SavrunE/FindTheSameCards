@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,9 +9,16 @@ public class WinLoseMenu : MonoBehaviour
 	[SerializeField] private EndsMemS _endsMemS;
 	[SerializeField] private List<Image> _images;
 
-	private void Start()
+	public void ShowLoseMenu()
 	{
+		this.gameObject.SetActive(true);
 		PlaceLoseSprites();
+	}
+
+	public void ShowWinMenu()
+	{
+		this.gameObject.SetActive(true);
+		PlaceWinSprites();
 	}
 
 	public void PlaceLoseSprites()
