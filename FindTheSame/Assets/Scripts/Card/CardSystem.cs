@@ -12,6 +12,7 @@ public class CardSystem : Singleton<CardSystem>
 	private int _cardCount;
 
 	public Action IsTakeRightCards;
+	public Action<int> IsChangeCardsCount;
 
 	private void OnEnable()
 	{
@@ -21,6 +22,17 @@ public class CardSystem : Singleton<CardSystem>
 	public void SetCardCount(int count)
 	{
 		_cardCount = count;
+		IsChangeCardsCount?.Invoke(_cardCount);
+	}
+
+	private void TakeRightCard()
+	{
+		_cardCount--;
+		IsChangeCardsCount?.Invoke(_cardCount);
+		if (_cardCount == 0)
+		{
+			Win();
+		}
 	}
 
 	public void TakeCard(Card card)
@@ -49,11 +61,7 @@ public class CardSystem : Singleton<CardSystem>
 		_lastCard = null;
 		Blocks.instance.Reset(1f);
 		IsTakeRightCards?.Invoke();
-		_cardCount--;
-		if (_cardCount == 0)
-		{
-			Win();
-		}
+		TakeRightCard();
 	}
 
 	private void TakeWrongCard(Card card)
