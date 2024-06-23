@@ -6,22 +6,16 @@ public class Points : MonoBehaviour
 	private int _currentPoints = 0;
 	[SerializeField] private int _pintsAccrual;
 	[SerializeField] private TextMeshProUGUI _pointsUI;
+	[SerializeField] private CardSystem _cardSystem;
 
 	private void OnEnable()
 	{
-		UpdatePointsView();
-		if (CardSystem.instance != null)
-		{
-			CardSystem.instance.IsTakeRightCards += AddPoints;
-		}
+		_cardSystem.IsTakeRightCards += AddPoints;
 	}
 
 	private void OnDisable()
 	{
-		if (CardSystem.instance != null)
-		{
-			CardSystem.instance.IsTakeRightCards -= AddPoints;
-		}
+		_cardSystem.IsTakeRightCards -= AddPoints;
 	}
 
 	private void AddPoints()
@@ -33,5 +27,16 @@ public class Points : MonoBehaviour
 	private void UpdatePointsView()
 	{
 		_pointsUI.text = _currentPoints.ToString();
+	}
+
+	public int TakePoints()
+	{
+		return _currentPoints;
+	}
+
+	public void SetPoints(int points)
+	{
+		_currentPoints = points;
+		UpdatePointsView();
 	}
 }

@@ -8,6 +8,7 @@ public class CardSystem : Singleton<CardSystem>
 	[SerializeField] private Timer _timer;
 	[SerializeField] private WinLoseMenu _winLoseMenu;
 	[SerializeField] private SaverData _saverData;
+	[SerializeField] private Points _points;
 	private Card _lastCard = null;
 	private int _cardCount;
 
@@ -80,7 +81,7 @@ public class CardSystem : Singleton<CardSystem>
 	public void Win()
 	{
 		_winLoseMenu.ShowWinMenu();
-		_saverData.SaveByWin();
+		_saverData.SaveByWin(_points.TakePoints());
 		StartCoroutine(RestartLevel());
 		Debug.Log("Win");
 	}
@@ -88,7 +89,7 @@ public class CardSystem : Singleton<CardSystem>
 	public void Lose()
 	{
 		_winLoseMenu.ShowLoseMenu();
-		_saverData.SaveByLost();
+		_saverData.SaveByLost(_points.TakePoints());
 		StartCoroutine(RestartLevel());
 		Debug.Log("Lose");
 	}

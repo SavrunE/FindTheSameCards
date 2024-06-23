@@ -5473,6 +5473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pintsAccrual: 10
   _pointsUI: {fileID: 2036124835}
+  _cardSystem: {fileID: 919549328}
 --- !u!114 &919549328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5489,6 +5490,7 @@ MonoBehaviour:
   _timer: {fileID: 919549326}
   _winLoseMenu: {fileID: 1648474303}
   _saverData: {fileID: 919549329}
+  _points: {fileID: 919549327}
 --- !u!114 &919549329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5502,8 +5504,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dontDestroyOnLoad: 0
-  _cardCount: 0
-  _timeToScene: 0
 --- !u!114 &919549330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5518,6 +5518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardSpawner: {fileID: 919549324}
   _timer: {fileID: 919549326}
+  _points: {fileID: 919549327}
 --- !u!114 &919549331
 MonoBehaviour:
   m_ObjectHideFlags: 0

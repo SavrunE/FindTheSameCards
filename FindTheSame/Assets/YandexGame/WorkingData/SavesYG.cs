@@ -13,18 +13,21 @@ namespace YG
         // Ваши сохранения
         public int cardCount = 10;
         public float timeToScene = 30f;
+        public int points;
         // ...
 
-        public void SaveByWin()
+        public void SaveByWin(int points)
         {
             cardCount++;
             timeToScene++;
+            this.points = points;
 		}
 
-        public void SaveByLost()
+        public void SaveByLost(int points)
         {
 			cardCount--;
 			timeToScene--;
+			this.points = points;
 		}
     }
 }

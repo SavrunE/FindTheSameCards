@@ -4,27 +4,22 @@ namespace YG
 {
     public class SaverData : Singleton<SaverData>
     {
-        [SerializeField] private int _cardCount;
-		[SerializeField] private float _timeToScene;
+        private int _cardCount;
+		private int _points;
+		private float _timeToScene;
 
 		private void OnEnable() => YandexGame.GetDataEvent += GetLoad;
         private void OnDisable() => YandexGame.GetDataEvent -= GetLoad;
 
-        //private void Awake()
-        //{
-        //    if (YandexGame.SDKEnabled)
-        //        GetLoad();
-        //}
-
-        public void SaveByWin()
+        public void SaveByWin(int points)
         {
-            YandexGame.savesData.SaveByWin();
+            YandexGame.savesData.SaveByWin(points);
 			YandexGame.SaveProgress();
         }
 
-		public void SaveByLost()
+		public void SaveByLost(int points)
 		{
-			YandexGame.savesData.SaveByLost();
+			YandexGame.savesData.SaveByLost(points);
 			YandexGame.SaveProgress();
 		}
 
@@ -33,6 +28,7 @@ namespace YG
         private void GetLoad()
         {
             _cardCount = YandexGame.savesData.cardCount;
+			_points = YandexGame.savesData.points;
 			_timeToScene = YandexGame.savesData.timeToScene;
         }
 
@@ -45,5 +41,10 @@ namespace YG
         {
             return YandexGame.savesData.timeToScene;
 		}
-    }
+
+		public int GetLoadPoints()
+		{
+			return YandexGame.savesData.points;
+		}
+	}
 }
