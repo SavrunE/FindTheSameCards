@@ -5,6 +5,7 @@ public class CardSpawner : MonoBehaviour
 	[SerializeField] private Card _cardTemplate;
 	[SerializeField] private SpriteHolder _spriteHolder;
 	[SerializeField] private SpawnPositions _spawnPositions;
+	[SerializeField] private CardsView _cardsView;
 
 	public void StartSpawn(int cardCount)
 	{
@@ -16,8 +17,8 @@ public class CardSpawner : MonoBehaviour
 	{
 		for (int i = 0; i < cardCount; i++)
 		{
-			Card cardL = Instantiate(_cardTemplate, this.transform);
-			Card cardR = Instantiate(_cardTemplate, this.transform);
+			Card cardL = Instantiate(_cardTemplate, _cardsView.transform);
+			Card cardR = Instantiate(_cardTemplate, _cardsView.transform);
 
 			int id = _spriteHolder.GetRndSpriteID();
 			Sprite sprite = _spriteHolder.GetSprite(id);
